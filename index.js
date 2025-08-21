@@ -102,7 +102,7 @@ client.on("message", async (msg) => {
       const nomor = chat.replace("IZIN ", "").trim() + "@c.us";
       if (!IZIN_TELEPON.includes(nomor)) IZIN_TELEPON.push(nomor);
       client.sendMessage(nomor, "✅ Kamu diizinkan telepon admin.");
-      return msg.reply(Nomor ${nomor} diizinkan telepon.);
+      return msg.reply(`Nomor ${nomor} diizinkan telepon.`);
     }
     if (chat.startsWith("TOLAK ")) {
       const nomor = chat.replace("TOLAK ", "").trim() + "@c.us";
