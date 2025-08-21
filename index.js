@@ -85,8 +85,7 @@ client.on("message", async (msg) => {
       case "5": nominal = "1/2"; break;
       case "6": nominal = "1"; break;
     }
-    return msg.reply(✅ TOP UP ${nominal} diproses. Terima kasih!);
-  }
+    return msg.reply(`✅ TOP UP ${nominal} diproses. Terima kasih!`);  }
 
   // --- SUB MENU PESAN PRIBADI ---
   if (chat === "1") return msg.reply("📌 Bon dicatat.");
