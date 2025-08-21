@@ -108,7 +108,7 @@ client.on("message", async (msg) => {
       const nomor = chat.replace("TOLAK ", "").trim() + "@c.us";
       IZIN_TELEPON = IZIN_TELEPON.filter((n) => n !== nomor);
       client.sendMessage(nomor, "❌ Izin telepon admin dicabut.");
-      return msg.reply(Nomor ${nomor} ditolak telepon.);
+      return msg.reply(`Nomor ${nomor} ditolak telepon.msg.`);
     }
   }
 });
