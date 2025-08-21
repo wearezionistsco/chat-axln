@@ -1,7 +1,6 @@
-# Gunakan Node.js versi LTS yang ringan
 FROM node:18-slim
 
-# Install dependency sistem untuk Chromium / Puppeteer
+# Install dependency Chromium
 RUN apt-get update && apt-get install -y \
     chromium \
     libnss3 \
@@ -27,23 +26,18 @@ RUN apt-get update && apt-get install -y \
     xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json & package-lock.json terlebih dahulu (biar cache lebih efisien)
 COPY package*.json ./
 
-# Install dependencies
+# Jangan download Chromium lagi
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
 RUN npm install --production
 
-# Copy semua source code
 COPY . .
 
-# Set environment variable supaya Puppeteer pakai Chromium dari sistem
+# Pakai Chromium sistem
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
-# Expose port (kalau ada web server, kalau tidak boleh di-skip)
-EXPOSE 3000
-
-# Start bot
 CMD ["npm", "start"]
