@@ -8,7 +8,7 @@ const client = new Client({
 });
 
 // Nomor admin
-const ADMIN = "628xxxxxxxxxx@c.us"; // ganti dengan nomor adminmu
+const ADMIN = "6287756266682.id"; // ganti dengan nomor adminmu
 
 // Daftar nomor yang dikecualikan (tidak auto-reply, boleh telepon tanpa izin)
 const EXCLUDED_NUMBERS = [
