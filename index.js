@@ -49,6 +49,7 @@ const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
     headless: true,
+    // ⚡ Pakai Chromium dari Docker, bukan Chromium internal Puppeteer
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium',
     args: [
       "--no-sandbox",
@@ -58,7 +59,7 @@ const client = new Client({
       "--no-first-run",
       "--no-zygote",
       "--single-process",
-      "--disable-gpu",
+      "--disable-gpu"
     ],
   },
 });
